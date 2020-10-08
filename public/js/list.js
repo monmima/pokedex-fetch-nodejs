@@ -1,21 +1,30 @@
-console.log("This is a random message! Hope you like it!");
-console.log("This message demonstrates that JavaScript was served by the server!");
+let offset = 1;
+let limit = 21;
+let currentPage = 1;
 
-for (let i = 1; i < 150; i++) {
-    fetch('https://pokeapi.co/api/v2/pokemon/' + i)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
+function getList(offset, limit) {
+    // clearing the display
+    document.querySelector("main").innerHTML = "";
 
-        document.querySelector("main").innerHTML += 
-        `<div>
-            <div><img src="${data.sprites.front_default}" alt="${data.name}"></div>
-            <div>
-                <div><a href="ejs-2/${data.name}">${data.name}</a></div>
-                <div>EXP. ${data.base_experience}</div>
-            </div>
-        </div>`;
+    for (let i = offset; i < limit; i++) {
+        fetch('https://pokeapi.co/api/v2/pokemon/' + i)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.types);
+    
+            document.querySelector("main").innerHTML += 
+            `<div>
+                <div><img src="${data.sprites.front_default}" alt="${data.name}"></div>
+                <div>
+                    <div><a href="/${data.name}">${data.name}</a></div>
+                </div>
+            </div>`;
+    
+        })
+        .catch(error => console.error(error));
+    }
 
-    })
-    .catch(error => console.error(error));
 }
+
+getList(offset, limit);
+

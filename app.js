@@ -24,9 +24,9 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 /**
  * EJS template 2
  */
-app.get('/ejs-2/:id', (req, res) => {
+app.get('/:id', (req, res) => {
     console.log(req.params.id);
-    res.status(200).render("ejs-2", {
+    res.status(200).render("one", {
         node : {
             dirname: __dirname,
             filename: __filename,
@@ -40,14 +40,14 @@ app.get('/ejs-2/:id', (req, res) => {
  * Index
  */
 app.get('/', (req, res) => {
-    res.status(200).render("ejs-3");
+    res.status(200).render("index");
 });
 
 /**
  * EJS template 3
  */
-app.get('/ejs-3', (req, res) => {
-    res.status(200).render("ejs-3");
+app.get('/index', (req, res) => {
+    res.status(200).render("index");
 });
 
 /**

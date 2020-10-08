@@ -15,7 +15,7 @@ footer, header {
     padding: 5px;
 }
 img {
-    max-height: 50px;
+    max-height: 100%;
     max-width: auto;
 }
 .database {
