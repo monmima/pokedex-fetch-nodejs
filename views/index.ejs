@@ -6,31 +6,20 @@
     <title>EJS 3</title>
 
     <style>
-      .flex {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-      .grid {
-        align-items: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-content: center;
-        justify-items: center;
-      }
+
     </style>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <%- include("header") %>
+	<%- include("header") %>
+	
+	<nav class="flex-buttons">
+		<button id="left"><==</button>
+		<div id="info">info</div>
+		<button id="right">==></button>
+	</nav>
 
     <main id="list" class="grid"></main>
-
-    <div class="flex">
-      <button id="left"><==</button>
-      <button id="right">==></button>
-    </div>
     
     <%- include("footer") %>
 

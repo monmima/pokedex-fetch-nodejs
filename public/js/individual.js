@@ -19,6 +19,7 @@ function getOnePokemon(whatPokemon) {
     .then(response => response.json())
     .then(data => {
         console.log(data.types[0].type.name);
+        console.log(data.id);
 
         let pokeType;
 
@@ -26,39 +27,56 @@ function getOnePokemon(whatPokemon) {
             pokeType = `${data.types[0].type.name}`;
             console.log(data.types.length);
         } else {
-            pokeType = `${data.types[0].type.name} et ${data.types[1].type.name}`;
+            pokeType = `${data.types[0].type.name}, ${data.types[1].type.name}`;
             console.log(data.types.length);
         }
 
         document.querySelector("main").innerHTML += 
-        `<div>
-            <div><img src="${data.sprites.front_default}" alt="${data.name}"></div>
+        `
             <div>
-                <div>${data.name}</div>
-                <div>Type: ${pokeType}</div>
+                <img src="${data.sprites.front_default}" alt="${data.name}">
             </div>
-        </div>`;
+            <div>${data.name}</div>
+            <div>Type: ${pokeType}</div>
+        `;
 
-        // console.log(data.id);
-
-        // nested fetch
-        fetch(`https://pokeapi.co/api/v2/evolution-chain/${data.id}/`)
+        // outer nested fetch
+        fetch(`https://pokeapi.co/api/v2/pokemon-species/${data.id}/`)
         .then(response => response.json())
         .then(data2 => {
+            
+            console.log(data2.evolution_chain.url);
 
-            if (data2.chain.evolves_to[0]) {
-                console.log(data2.chain.evolves_to[0].species.name);
+            // inner nested fetch
+            fetch(data2.evolution_chain.url)
+            .then(response => response.json())
+            .then(data3 => {
+                
+                // console.log(data3.chain.species.name);
+                // console.log(data3.chain.evolves_to[0].species.name);
+                // console.log(data3.chain.evolves_to[0].evolves_to[0].species.name);
 
-                document.querySelector("main").innerHTML += 
-                `<div>${data2.chain.evolves_to[0].species.name}</div>`;
+                let arrayEvo = [
+                    data3.chain.species.name,
+                    data3.chain.evolves_to[0].species.name,
+                ]
 
-            } else {
-                console.log("Aucune évolution pour ce pokémon!");
-            }
+                // push a third element to the array if it's not undefined
+                if (data3.chain.evolves_to[0].evolves_to[0]) {
+                    arrayEvo.push(data3.chain.evolves_to[0].evolves_to[0].species.name);
+                }
+
+                console.log(arrayEvo);
+
+                return arrayEvo;
+
+            })
+            .catch(error => console.error(error));
+            // end of inner nested fetch
 
         })
         .catch(error => console.error(error));
-        // end of nested fetch
+        // end of outer nested fetch
     })
     .catch(error => console.error(error));
     // end of main fetch

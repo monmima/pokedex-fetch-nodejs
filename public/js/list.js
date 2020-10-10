@@ -24,6 +24,11 @@ function getList(offset, limit) {
         .catch(error => console.error(error));
     }
 
+    updateInfo();
+}
+
+function updateInfo() {
+    document.querySelector("#info").innerHTML = `${offset} to ${limit}`;
 }
 
 getList(offset, limit);
