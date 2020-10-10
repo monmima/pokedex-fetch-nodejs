@@ -1,19 +1,12 @@
 
-let myLocation = window.location.pathname;
+function getCurrentPage() {
+    let myLocation = window.location.pathname; // current URL
+    myLocation = myLocation.split("/");
+    myLocation = myLocation[myLocation.length - 1]; // last item in the array
+    return myLocation;
+}
 
-// myLocation = myLocation.length - 1;
-
-myLocation = myLocation.split("/");
-
-// last item in the array
-myLocation = myLocation[myLocation.length - 1];
-
-getOnePokemon(myLocation);
-
-// console.log(myLocation);
-
-function getOnePokemon(whatPokemon) {
-
+function getOnePokemonInfo(whatPokemon) {
     // main fetch
     fetch(`https://pokeapi.co/api/v2/pokemon/${whatPokemon}`)
     .then(response => response.json())
@@ -82,3 +75,6 @@ function getOnePokemon(whatPokemon) {
     // end of main fetch
 
 }
+
+const currentPokemon = getCurrentPage();
+getOnePokemonInfo(currentPokemon);
