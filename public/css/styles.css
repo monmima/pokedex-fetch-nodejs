@@ -14,9 +14,12 @@ footer, header {
     min-height: 50px;
     padding: 5px;
 }
-img {
-    max-height: 100%;
-    max-width: auto;
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 175px;
 }
 .center {
 
@@ -57,9 +60,14 @@ figure, .images {
 .grid {
     align-items: center;
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     justify-items: center;
+}
+.image-pokemon {
+    height: 96px;
+    width: 96px;
 }
 /*MEDIA QUERIES*/
 @media screen and (max-width: 499px) {
