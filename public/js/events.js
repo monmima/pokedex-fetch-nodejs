@@ -39,9 +39,23 @@ document.querySelector("#right").addEventListener("click", function() {
 document.querySelector("button[type=submit]").addEventListener("click", function(e) {
     e.preventDefault();
 
-    let pokemonToSearch = document.querySelector("input[type=text]").value;
+    let pokemonToSearch = document.querySelector("input[type=text]").value
+        .toLowerCase()
+        .trim();
 
+    // Le Pokémon est-il dans la liste?
+    const isPokemonInArray = pokemonSpecies.includes(pokemonToSearch);
 
-    window.location.replace(`${window.location.pathname}${pokemonToSearch}`);
+    /**
+     * if such a species exist, charge the description page
+     */
+    if (isPokemonInArray || pokemonToSearch >=1 && pokemonToSearch <= 800) {
+        // alert(pokemonToSearch);
+        window.location.replace(`${window.location.pathname}${pokemonToSearch}`);
+    } else {
+        alert("Pokémon introuvable...");
+    }
+
+    // window.location.replace(`${window.location.pathname}${pokemonToSearch}`);
 });
 
