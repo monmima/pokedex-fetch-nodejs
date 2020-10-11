@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EJS 3</title>
+    <title>Pokédex - Liste</title>
 
     <style>
 
@@ -15,6 +15,12 @@
 	<%- include("header") %>
 	
 	<nav class="flex-buttons">
+        
+        <form name="form-search-data" id="form-search-data" method="GET" action="/get-data-form">
+            <input type="text">
+            <button type="submit">Rechercher</button>
+        </form>
+
 		<button id="left"><==</button>
 		<div id="info">info</div>
 		<button id="right">==></button>
@@ -28,6 +34,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="/js/list.js"></script>
+    <script src="/js/individual.js"></script>
     <script src="/js/events.js"></script>
 </body>
 </html>

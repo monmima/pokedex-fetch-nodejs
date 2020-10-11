@@ -116,14 +116,6 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
 }
-/* .viewport-height-100 {
-    height: 100vh;
-
-    display: flex;
-    align-items: space-around;
-    flex-direction: column;
-    justify-content: space-around;
-} */
 .spin {
     animation-duration: 2s;
     animation-name: spin;

@@ -28,7 +28,6 @@ function printEvo(whatArrayEvo) {
     } else {
         document.querySelector("main").innerHTML += `<div>Pokémon sans évolution!</div>`;
     }
- 
 }
 
 function getOnePokemonInfo(whatPokemon) {
@@ -158,5 +157,13 @@ function getOnePokemonInfo(whatPokemon) {
 }
 
 const currentPokemon = getCurrentPage();
-getOnePokemonInfo(currentPokemon);
+
+/**
+ * if you're not on the main page and you are on a subpage with a pokemon name
+ * needed because this code is loaded from the main page to handle searches
+ */
+if (currentPokemon !== "") {
+    getOnePokemonInfo(currentPokemon);
+}
+
 

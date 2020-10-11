@@ -1,3 +1,4 @@
+// left button
 document.querySelector("#left").addEventListener("click", function() {
     console.log("left button clicked");
 
@@ -11,14 +12,13 @@ document.querySelector("#left").addEventListener("click", function() {
             limit = limit - 20;
         }
     
-        console.log(offset, limit);
+        // console.log(offset, limit);
     
         getList(offset, limit);
     }
-
-
 });
 
+// right button
 document.querySelector("#right").addEventListener("click", function() {
     console.log("right button clicked");
 
@@ -30,9 +30,18 @@ document.querySelector("#right").addEventListener("click", function() {
         limit = limit + 20;
     }
 
-    console.log(offset, limit);
+    // console.log(offset, limit);
 
     getList(offset, limit);
+});
 
+// search form
+document.querySelector("button[type=submit]").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let pokemonToSearch = document.querySelector("input[type=text]").value;
+
+
+    window.location.replace(`${window.location.pathname}${pokemonToSearch}`);
 });
 

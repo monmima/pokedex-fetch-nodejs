@@ -22,7 +22,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 /**
- * EJS template 2
+ * One pokemon page
  */
 app.get('/:id', (req, res) => {
     console.log(req.params.id);
@@ -33,7 +33,6 @@ app.get('/:id', (req, res) => {
             id: req.params.id,
         }
     });
-    
 });
 
 /**
