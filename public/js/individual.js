@@ -78,7 +78,7 @@ function getOnePokemonInfo(whatPokemon) {
                         <dd>${data.weight / 10} kg</dd>
                     </dl>
 
-                    <dl class="grid-secondary-one-pokemon grid-2 grid-left-side">
+                    <dl class="grid-secondary-one-pokemon grid-2 grid-left-side test">
                         <dt>PV</dt>
                         <dd>${data.stats[0].base_stat}</dd>
 

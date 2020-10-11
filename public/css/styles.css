@@ -93,7 +93,9 @@ nav {
     display: grid;
     align-items: center;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center;
     justify-content: center;
     justify-items: center;
 }
