@@ -79,22 +79,22 @@ function getOnePokemonInfo(whatPokemon) {
                     </dl>
 
                     <dl class="grid grid-2 grid-left-side">
-                        <dt>${data.stats[0].stat.name}</dt>
+                        <dt>PV</dt>
                         <dd>${data.stats[0].base_stat}</dd>
 
-                        <dt>${data.stats[1].stat.name}</dt>
+                        <dt>Attaque</dt>
                         <dd>${data.stats[1].base_stat}</dd>
 
-                        <dt>${data.stats[2].stat.name}</dt>
+                        <dt>Défense</dt>
                         <dd>${data.stats[2].base_stat}</dd>
 
-                        <dt>${data.stats[3].stat.name}</dt>
+                        <dt>Attaque spéciale</dt>
                         <dd>${data.stats[3].base_stat}</dd>
 
-                        <dt>${data.stats[4].stat.name}</dt>
+                        <dt>Défense spéciale</dt>
                         <dd>${data.stats[4].base_stat}</dd>
 
-                        <dt>${data.stats[5].stat.name}</dt>
+                        <dt>Vitesse</dt>
                         <dd>${data.stats[5].base_stat}</dd>
                     </dl>
 
