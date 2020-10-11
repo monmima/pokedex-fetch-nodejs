@@ -50,7 +50,7 @@ function getOnePokemonInfo(whatPokemon) {
         }
 
         document.querySelector("main").innerHTML += `
-            <div class="one-pokemon grid grid-2">
+            <div class="one-pokemon grid-main-one-pokemon grid-2">
 
                 <div>
                     <figure class="card">
@@ -67,7 +67,7 @@ function getOnePokemonInfo(whatPokemon) {
 
                     <div class="badge badge-dark"">${pokeType}</div>
 
-                    <dl class="grid grid-2 grid-left-side">
+                    <dl class="grid-secondary-one-pokemon grid-2 grid-left-side">
                         <dt>Expérience</dt>
                         <dd>${data.base_experience}</dd>
 
@@ -78,7 +78,7 @@ function getOnePokemonInfo(whatPokemon) {
                         <dd>${data.weight / 10} kg</dd>
                     </dl>
 
-                    <dl class="grid grid-2 grid-left-side">
+                    <dl class="grid-secondary-one-pokemon grid-2 grid-left-side">
                         <dt>PV</dt>
                         <dd>${data.stats[0].base_stat}</dd>
 
