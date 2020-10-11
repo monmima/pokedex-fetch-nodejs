@@ -38,7 +38,7 @@ function getList(offset, limit) {
 }
 
 function updateInfo() {
-    document.querySelector("#info").innerHTML = `${offset} to ${limit}`;
+    document.querySelector("#info").innerHTML = `${offset} à ${limit}`;
 }
 
 getList(offset, limit);

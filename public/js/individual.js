@@ -51,29 +51,57 @@ function getOnePokemonInfo(whatPokemon) {
         }
 
         document.querySelector("main").innerHTML += `
-            <figure class="card">
-                <img class="image-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
-                <div class="card-body">
-                    <figcaption class="card-title">
-                        ${data.name}
-                    </figcaption>
+            <div class="one-pokemon grid grid-2">
+
+                <div>
+                    <figure class="card">
+                        <img class="image-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
+                        <div class="card-body">
+                            <figcaption class="card-title">
+                                ${data.name}
+                            </figcaption>
+                        </div>
+                    </figure>
                 </div>
-            </figure>
 
-            <div class="badge badge-dark"">${pokeType}</div>
+                <div>
 
-            <div>Expérience: ${data.base_experience}</div>
-            <div>${data.stats[0].stat.name}: ${data.stats[0].base_stat}</div>
-            <div>${data.stats[1].stat.name}: ${data.stats[1].base_stat}</div>
-            <div>${data.stats[2].stat.name}: ${data.stats[2].base_stat}</div>
-            <div>${data.stats[3].stat.name}: ${data.stats[3].base_stat}</div>
-            <div>${data.stats[4].stat.name}: ${data.stats[4].base_stat}</div>
-            <div>${data.stats[5].stat.name}: ${data.stats[5].base_stat}</div>
+                    <div class="badge badge-dark"">${pokeType}</div>
 
-            <hr>
+                    <dl class="grid grid-2 grid-left-side">
+                        <dt>Expérience</dt>
+                        <dd>${data.base_experience}</dd>
 
-            <div>Taille: ${data.height / 10} m</div>
-            <div>Poids: ${data.weight / 10} kg</div>
+                        <dt>Taille</dt>
+                        <dd>${data.height / 10} m</dd>
+
+                        <dt>Poids</dt>
+                        <dd>${data.weight / 10} kg</dd>
+                    </dl>
+
+                    <dl class="grid grid-2 grid-left-side">
+                        <dt>${data.stats[0].stat.name}</dt>
+                        <dd>${data.stats[0].base_stat}</dd>
+
+                        <dt>${data.stats[1].stat.name}</dt>
+                        <dd>${data.stats[1].base_stat}</dd>
+
+                        <dt>${data.stats[2].stat.name}</dt>
+                        <dd>${data.stats[2].base_stat}</dd>
+
+                        <dt>${data.stats[3].stat.name}</dt>
+                        <dd>${data.stats[3].base_stat}</dd>
+
+                        <dt>${data.stats[4].stat.name}</dt>
+                        <dd>${data.stats[4].base_stat}</dd>
+
+                        <dt>${data.stats[5].stat.name}</dt>
+                        <dd>${data.stats[5].base_stat}</dd>
+                    </dl>
+
+                </div>
+
+            </div>
         `;
 
         // outer nested fetch

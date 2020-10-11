@@ -1,18 +1,48 @@
+/* SPÉCIAL */
+
+@font-face {
+    font-family: pokemon;
+    src: url(/fonts/pokemon_solid-webfont.woff2);
+}
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(500deg);}
+}
+dd, dl, dt {
+    padding: 0;
+    margin: 0;
+}
+
+/* RESTE */
+
 body {
     background-color: aliceblue;
+    transition: all 0.5s ease;
 }
 figure {
     border: 2px solid black;
 }
-footer, header {
+figure, .images {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+}
+footer, header {
     /* border: 2px solid black;
     border-radius: 15px; */
+    min-height: 50px;
+    padding: 15px;
+
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    min-height: 50px;
-    padding: 5px;
+
+}
+h2 {
+    font-family: pokemon, serif;
 }
 .card {
     display: flex;
@@ -22,7 +52,6 @@ footer, header {
     width: 175px;
 }
 .center {
-
     /* flex */
     align-content: center;
     align-items: center;
@@ -41,13 +70,6 @@ footer, header {
     font-size: 1.2em;
     text-align: center;
 }
-figure, .images {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 5px;
-    padding: 5px;
-}
 .flex-buttons {
     padding: 50px;
 
@@ -58,22 +80,61 @@ figure, .images {
     justify-content: space-around;
 }
 .grid {
-    align-items: center;
     display: grid;
+    align-items: center;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     justify-items: center;
 }
+.grid-2 {
+    grid-template-columns: 1fr 1fr;
+}
+.grid-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid-left-side {
+    grid-column-gap: 40px;
+    grid-row-gap: 0;
+    justify-items: start;
+}
 .image-pokemon {
     height: 96px;
     width: 96px;
 }
+.one-pokemon {
+    padding: 40px;
+    width: 100%;
+}
+.pokeball {
+    height: 70px;
+    transform: rotate(500deg);
+    width: 70px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* .viewport-height-100 {
+    height: 100vh;
+
+    display: flex;
+    align-items: space-around;
+    flex-direction: column;
+    justify-content: space-around;
+} */
+.spin {
+    animation-duration: 2s;
+    animation-name: spin;
+}
+
 /*MEDIA QUERIES*/
 @media screen and (max-width: 499px) {
-    body {
-        font-size: 0.8em;         
+    body, h2 {
+        font-size: 1em;         
     }
+    /* grille devient du flex */
     .grid {
         align-items: center;
         display: flex;
@@ -83,7 +144,7 @@ figure, .images {
     }
 }
 @media screen and (min-width: 501px) and (max-width: 960px) {
-    body {
+    body, h2 {
         font-size: 1.1em;
     }
     .grid {
@@ -91,7 +152,7 @@ figure, .images {
     }
 }
 @media screen and (min-width: 961px) and (max-width: 1100px) {
-    body {
+    body, h2 {
         font-size: 1.2em;
     }
     .grid {
@@ -99,7 +160,7 @@ figure, .images {
     }
 }
 @media screen and (min-width: 1100px) {
-    body {
+    body, h2 {
         font-size: 1.3em;
     }
 }
