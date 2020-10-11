@@ -26,7 +26,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
  */
 app.get('/:id', (req, res) => {
     console.log(req.params.id);
-    res.status(200).render("one", {
+    res.status(200).render("one-page", {
         node : {
             dirname: __dirname,
             filename: __filename,
@@ -40,7 +40,7 @@ app.get('/:id', (req, res) => {
  * Index
  */
 app.get('/', (req, res) => {
-    res.status(200).render("index");
+    res.status(200).render("index-page");
 });
 
 /**

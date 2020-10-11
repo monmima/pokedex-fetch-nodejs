@@ -8,7 +8,6 @@ function getCurrentPage() {
 
 function printEvo(whatArrayEvo) {
     let pokeName = getCurrentPage();
-    let indexInArray;
 
     // for (let i = 0; i < whatArrayEvo.length; i++) {
     //     document.querySelector("main").innerHTML += `<div>${whatArrayEvo[i]}</div>`;
@@ -61,7 +60,20 @@ function getOnePokemonInfo(whatPokemon) {
                 </div>
             </figure>
 
+            <div class="badge badge-dark"">${pokeType}</div>
+
             <div>Expérience: ${data.base_experience}</div>
+            <div>${data.stats[0].stat.name}: ${data.stats[0].base_stat}</div>
+            <div>${data.stats[1].stat.name}: ${data.stats[1].base_stat}</div>
+            <div>${data.stats[2].stat.name}: ${data.stats[2].base_stat}</div>
+            <div>${data.stats[3].stat.name}: ${data.stats[3].base_stat}</div>
+            <div>${data.stats[4].stat.name}: ${data.stats[4].base_stat}</div>
+            <div>${data.stats[5].stat.name}: ${data.stats[5].base_stat}</div>
+
+            <hr>
+
+            <div>Taille: ${data.height / 10} m</div>
+            <div>Poids: ${data.weight / 10} kg</div>
         `;
 
         // outer nested fetch

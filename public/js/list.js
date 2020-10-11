@@ -10,7 +10,7 @@ function getList(offset, limit) {
         fetch('https://pokeapi.co/api/v2/pokemon/' + i)
         .then(response => response.json())
         .then(data => {
-            // console.log(data.types);
+            console.log(data.types);
     
             // document.querySelector("main").innerHTML += 
             // `<div>
@@ -30,7 +30,6 @@ function getList(offset, limit) {
                     </div>
                 </figure>
             `;
-    
         })
         .catch(error => console.error(error));
     }
