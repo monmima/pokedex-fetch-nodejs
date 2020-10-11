@@ -14,16 +14,19 @@
 <body class="container">
 	<%- include("header") %>
 	
-	<nav class="flex-buttons">
+	<nav class="nav-flex">
         
-        <form name="form-search-data" id="form-search-data" method="GET" action="/get-data-form">
+        <form name="form-search-data" id="form-search-data" method="GET" action="/get-data-form" class="nav-flex">
             <input type="text">
             <button type="submit">Rechercher</button>
         </form>
 
-		<button id="left"><==</button>
-		<div id="info">info</div>
-		<button id="right">==></button>
+        <div class="nav-flex width">
+            <button id="left"><==</button>
+            <div id="info">info</div>
+            <button id="right">==></button>
+        </div>
+
 	</nav>
 
     <main id="list" class="grid grid-4"></main>

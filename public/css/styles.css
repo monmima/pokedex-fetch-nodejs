@@ -44,6 +44,9 @@ footer, header {
 h2 {
     font-family: pokemon, serif;
 }
+nav {
+    padding: 50px;
+}
 .card {
     display: flex;
     align-items: center;
@@ -69,15 +72,6 @@ h2 {
 .database-name {
     font-size: 1.2em;
     text-align: center;
-}
-.flex-buttons {
-    padding: 50px;
-
-    /* flex */
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 .grid {
     display: grid;
@@ -106,6 +100,13 @@ h2 {
     padding: 40px;
     width: 100%;
 }
+.nav-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin: 20px;
+}
 .pokeball {
     height: 70px;
     transform: rotate(500deg);
@@ -119,6 +120,13 @@ h2 {
 .spin {
     animation-duration: 2s;
     animation-name: spin;
+}
+.test {
+    background-color: blue;
+}
+.width {
+    padding: 0 20px 0 20px;
+    width: 300px;
 }
 
 /*MEDIA QUERIES*/
