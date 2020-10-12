@@ -5,6 +5,7 @@ let currentPage = 1;
 
 function updateInfo() {
     document.querySelector("#info").innerHTML = `${offset} à ${limit}`;
+    console.log(`${offset} à ${limit}`);
 }
 
 function getList(offset, limit) {

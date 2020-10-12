@@ -59,3 +59,10 @@ document.querySelector("button[type=submit]").addEventListener("click", function
     // window.location.replace(`${window.location.pathname}${pokemonToSearch}`);
 });
 
+// génère événements du menu select
+for (let i = 1; i < 800; i = i + 20) {
+    document.querySelector(".dropdown-content").innerHTML += `
+        <a href="#" onclick="offset=${i}; limit=${i + 20}; getList(${i}, ${i + 20});">${i} à ${i + 20}</a>
+    `;
+}
+

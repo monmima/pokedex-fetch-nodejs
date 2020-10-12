@@ -22,9 +22,16 @@
         </form>
 
         <div class="nav-flex width">
-            <button id="left" class="btn btn-secondary">⬅</button>
-            <div id="info">info</div>
-            <button id="right" class="btn btn-secondary">➡</button>
+            <button id="left" class="btn btn-secondary" id="left">⬅</button>
+
+            <div class="dropdown">
+                <button class="btn btn-danger" id="info">info</button>
+                <div class="dropdown-content">
+                    <!-- content injected here -->
+                </div>
+            </div>
+
+            <button id="right" class="btn btn-secondary" id="right">➡</button>
         </div>
 
 	</nav>
