@@ -22,11 +22,11 @@ document.querySelector("#left").addEventListener("click", function() {
 document.querySelector("#right").addEventListener("click", function() {
     console.log("right button clicked");
 
-    if (offset + 20 <= 1040) {
+    if (offset + 20 <= 861) {
         offset = offset + 20;
     }
 
-    if (limit + 20 <= 1040) {
+    if (limit + 20 <= 881) {
         limit = limit + 20;
     }
 
@@ -49,7 +49,7 @@ document.querySelector("button[type=submit]").addEventListener("click", function
     /**
      * if such a species exist, charge the description page
      */
-    if (isPokemonInArray || pokemonToSearch >=1 && pokemonToSearch <= 800) {
+    if (isPokemonInArray || pokemonToSearch >=1 && pokemonToSearch <= 893) {
         // alert(pokemonToSearch);
         window.location.replace(`${window.location.pathname}${pokemonToSearch}`);
     } else {
@@ -60,9 +60,13 @@ document.querySelector("button[type=submit]").addEventListener("click", function
 });
 
 // génère événements du menu select
-for (let i = 1; i < 800; i = i + 20) {
+for (let i = 1; i < 881; i = i + 20) {
+    
+    let offset = i;
+    let limit = i + 20;
+
     document.querySelector(".dropdown-content").innerHTML += `
-        <a href="#" onclick="offset=${i}; limit=${i + 20}; getList(${i}, ${i + 20});">${i} à ${i + 20}</a>
+        <a href="#" onclick="offset=${offset}; limit=${limit}; getList(${offset}, ${limit});">${offset} à ${limit}</a>
     `;
 }
 
