@@ -53,7 +53,7 @@ function getOnePokemonInfo(whatPokemon) {
             <div class="one-pokemon grid-main-one-pokemon grid-2">
 
                 <div>
-                    <figure class="card">
+                    <figure class="card card-flex">
                         <img class="image-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
                         <div class="card-body">
                             <figcaption class="card-title">
@@ -63,7 +63,7 @@ function getOnePokemonInfo(whatPokemon) {
                     </figure>
                 </div>
 
-                <div>
+                <div class="card p-2">
 
                     <div class="badge badge-dark"">${pokeType}</div>
 

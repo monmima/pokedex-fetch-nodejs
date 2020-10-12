@@ -19,7 +19,7 @@ function getList(offset, limit) {
             // console.log(data.types);
 
             document.querySelector("main").innerHTML += `
-                <figure class="card">
+                <figure class="card card-flex">
                     <img class="image-pokemon" src="${data.sprites.front_default}" alt="${data.name}">
                     <div class="card-body">
                         <figcaption class="card-title">
