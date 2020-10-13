@@ -76,6 +76,10 @@ nav {
     font-size: 1.2em;
     text-align: center;
 }
+.fleches-navigation {
+    height: 20px;
+    width: 20px;
+}
 .grid-index {
     display: grid;
     align-items: center;
@@ -129,9 +133,9 @@ nav {
     margin: 20px;
 }
 .pokeball {
-    height: 70px;
+    height: 50px;
     transform: rotate(500deg);
-    width: 70px;
+    width: 50px;
 }
 .row {
     display: flex;
@@ -218,6 +222,10 @@ nav {
         flex-direction: column;
         justify-content: left;
         justify-items: center;
+    }
+    .pokeball {
+        height: 30px;
+        width: 30px;
     }
 }
 @media screen and (min-width: 501px) and (max-width: 960px) {

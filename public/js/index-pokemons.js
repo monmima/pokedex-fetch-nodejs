@@ -1,7 +1,5 @@
 let offset = 1;
 let limit = 21;
-let currentPage = 1;
-
 
 function updateInfo() {
     document.querySelector("#info").innerHTML = `${offset} à ${limit}`;
